@@ -13,11 +13,13 @@
         <tr>
             <th>
                 <button (click)="prevPage()" *ngIf="papagenumber >1;">Atras</button>
-                <div class="container" *ngFor="let item of datos; let i=index">}
-                    <div class="container" *ngIf=" i<=val   ">
-                        <button (click)="page(item.id) " *ngIf="i*10<valores ">{{i+1}}</button>
+
+                <div class="container" *ngFor="let item of datos; let i=index">
+                    <div class="container" *ngIf=" i<val && i>val-6">
+                        <button class="containerx" (click)="page(item.id) " *ngIf="i*10<valores ">{{i+1}}</button>
                     </div>
                 </div>
+
                 <button (click)="nextPage() ">Adelante</button>
             </th>
         </tr>

@@ -7,7 +7,8 @@ import { ApiService } from 'src/app/paginacion/service/api.service';
   templateUrl: './pagina-lista.component.html',
   styles: [
   `
-  .container{display:inline;}
+  .container{display:inline;pading:13px;}
+  button{margin:8px}
   `
   ]
 })
