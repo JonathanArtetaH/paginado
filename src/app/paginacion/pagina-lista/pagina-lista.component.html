@@ -1,0 +1,25 @@
+<p>ejemplo de listado en paginacion </p>
+<table>
+    <thead>
+        <tr>
+            <th>Dato 1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of datos   |  filtro:papagenumber">
+            <th>{{item.id}} | {{item.title}}</th>
+            <hr>
+        </tr>
+        <tr>
+            <th>
+                <button (click)="prevPage()" *ngIf="papagenumber >1;">Atras</button>
+                <div class="container" *ngFor="let item of datos; let i=index">}
+                    <div class="container" *ngIf=" i<=val   ">
+                        <button (click)="page(item.id) " *ngIf="i*10<valores ">{{i+1}}</button>
+                    </div>
+                </div>
+                <button (click)="nextPage() ">Adelante</button>
+            </th>
+        </tr>
+    </tbody>
+</table>

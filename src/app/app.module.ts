@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
-
+import {HttpClientModule} from '@angular/common/http'; 
+import { AppComponent } from './app.component'; 
+import { PaginacionModule } from './paginacion/paginacion.module'; 
+import {NgxPaginationModule} from 'ngx-pagination';  
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,  
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    PaginacionModule,
+    NgxPaginationModule
+  ],exports:[
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
