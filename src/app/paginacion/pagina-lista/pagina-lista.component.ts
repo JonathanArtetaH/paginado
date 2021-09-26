@@ -19,19 +19,25 @@ export class PaginaListaComponent implements OnInit {
   pagesice: number = 0;
   numerocontador: string[] = [];
   valores: number=0;
-  val: number =3;
+  val: number =3; 
+  i: number =0; 
   constructor(private api: ApiService) { }
 
+  
   ngOnInit() {
     this.api.getLista().subscribe(rest => {
       this.datos = rest
       this.valores = this.datos.length
     })
+ 
+
   }
+  
+  
+  
 
   nextPage() {
-    this.papagenumber += 10;
-    console.log(this.papagenumber);
+    this.papagenumber += 10; 
     this.val = this.val +1 
   }
 
@@ -44,5 +50,16 @@ export class PaginaListaComponent implements OnInit {
     this.papagenumber =  (i * 10)
     this.val = i +1
      
+  }
+
+  primerpage(){
+    console.log("primera")
+    this.papagenumber = 1
+  }
+
+  ultimapage(){
+    this.i = 19;
+    console.log("ultima", this.datos.length)
+    this.papagenumber = this.datos.length -10
   }
 }
